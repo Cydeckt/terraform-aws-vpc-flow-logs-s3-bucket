@@ -112,7 +112,7 @@ data "aws_iam_policy_document" "bucket" {
 }
 
 module "kms_key" {
-  source  = "cloudposse/kms-key/aws"
+  source  = "cydeckt/kms-key/aws"
   version = "0.9.0"
 
   description             = "KMS key for VPC Flow Logs"
@@ -124,7 +124,7 @@ module "kms_key" {
 }
 
 module "s3_log_storage_bucket" {
-  source  = "cloudposse/s3-log-storage/aws"
+  source  = "cydekct/s3-log-storage/aws"
   version = "0.20.0"
 
   kms_master_key_arn                 = module.kms_key.alias_arn
